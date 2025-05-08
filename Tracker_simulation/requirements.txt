@@ -1,0 +1,4 @@
+kafka-python==2.2.4
+numpy==2.2.5
+matplotlib
+opencv-python

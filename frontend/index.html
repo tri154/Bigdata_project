@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCMOT</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .header {
+        width: 100%;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        padding: 1rem 0;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .image-container {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #eaeaea;
+      }
+
+      .details-container {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #666;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      MCMOT
+    </div>
+    <div class="main-content">
+      <div class="image-container">
+        <img id="dynamic-image" alt="Image" />
+      </div>
+      <div class="details-container">
+        <p>Details Placeholder</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
