@@ -31,13 +31,13 @@
       .main-content {
         flex: 1;
         display: flex;
-        flex-direction: row;
+        flex-direction: column; /* Changed to column to stack image and link */
         align-items: center;
         justify-content: center;
       }
 
       .image-container {
-        width: 50%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -45,21 +45,33 @@
       }
 
       .image-container img {
-        max-width: 100%;
-        max-height: 100%;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        max-height: none;
         border: 1px solid #ddd;
         border-radius: 8px;
         background-color: #eaeaea;
       }
 
-      .details-container {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .link-container {
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      .link-container a {
         font-size: 1.2rem;
-        color: #666;
-        padding: 1rem;
+        color: #007bff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .link-container a:hover {
+        background-color: #007bff;
+        color: #fff;
       }
     </style>
   </head>
@@ -67,14 +79,14 @@
     <div class="header">
       MCMOT
     </div>
+    <script type="module" src="/src/main.ts"></script>
     <div class="main-content">
       <div class="image-container">
         <img id="dynamic-image" alt="Image" />
       </div>
-      <div class="details-container">
-        <p>Details Placeholder</p>
+      <div class="link-container">
+        <a href="https://my-elasticsearch-project-dabe03.kb.ap-southeast-1.aws.elastic.cloud/app/r/s/oYNTP" target="_blank">See statistics</a>
       </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

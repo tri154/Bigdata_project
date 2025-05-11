@@ -2,28 +2,34 @@ import './style.css'
 
 const imageElement = document.querySelector<HTMLImageElement>('#dynamic-image');
 
+let previousImageUrl: string | null = null;
+
 async function fetchAndUpdateImage() {
   try {
-    // Append a timestamp to bypass browser cache
-    const response = await fetch(`http://localhost:8000/api/image?timestamp=${Date.now()}`);
+    const response = await fetch(`http://localhost:8000/get_image?timestamp=${Date.now()}`);
     if (!response.ok) {
       throw new Error('Failed to fetch image');
     }
+
     const imageBlob = await response.blob();
     const imageUrl = URL.createObjectURL(imageBlob);
 
     if (imageElement) {
-      imageElement.src = imageUrl;
-
-      // Optional: revoke the previous blob URL to free memory
       imageElement.onload = () => {
-        URL.revokeObjectURL(imageUrl);
+        // Revoke the previous URL after the new image has loaded
+        if (previousImageUrl) {
+          URL.revokeObjectURL(previousImageUrl);
+        }
+        previousImageUrl = imageUrl;
       };
+      imageElement.src = imageUrl;
     }
   } catch (error) {
     console.error('Error fetching image:', error);
   }
 }
+
+
 
 // Fetch the image initially
 fetchAndUpdateImage();

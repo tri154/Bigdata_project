@@ -5,7 +5,7 @@ import numpy as np
 # Create Kafka consumer
 consumer = KafkaConsumer(
     'tracking',
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers='localhost:9094',
     group_id='visualization',  # Set a group ID
     value_deserializer=lambda m: json.loads(m.decode('utf-8')),
     auto_offset_reset='earliest',  # Read from the beginning if no offset is committed
