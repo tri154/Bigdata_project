@@ -6,7 +6,7 @@ let previousImageUrl: string | null = null;
 
 async function fetchAndUpdateImage() {
   try {
-    const response = await fetch(`http://localhost:8000/get_image?timestamp=${Date.now()}`);
+    const response = await fetch(`http://42.114.53.199:15205/get_image?timestamp=${Date.now()}`);
     if (!response.ok) {
       throw new Error('Failed to fetch image');
     }
