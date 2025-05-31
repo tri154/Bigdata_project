@@ -60,10 +60,8 @@ python consumer.py --topic tracking --elastic_host <ELASTIC_HOST> --elastic_api_
 
 ## Acknowledgement
 
-We appreciate the following github repos a lot for their valuable code base or datasets:
+Big thanks to the following repo and challenge for sharing such helpful code and datasets:
 
-https://github.com/ifzhang/ByteTrack
+https://github.com/ZhenyuX1E/PoseTrack
 
-https://github.com/JDAI-CV/fast-reid
-
-https://github.com/longcw/crossview_3d_pose_tracking
+https://www.aicitychallenge.org/2024-ai-city-challenge/
